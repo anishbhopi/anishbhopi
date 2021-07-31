@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+            <record id="action_college_student" model="ir.actions.act_window">
+            <field name="name">Student</field>
+            <field name="res_model">college.student</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Add a new student
+              </p><p>
+                Add the new student data
+              </p>
+            </field>
+            </record>
+
+    <record id="college_student_tree" model="ir.ui.view">
+            <field name="name">Student</field>
+            <field name="model">college.student</field>
+            <field name="arch" type="xml">
+                <tree string="Students List">
+                    <field name="enrollment_no"/>
+                    <field name="first_name"/>
+                    <field name="last_name"/>
+                    <field name="gender"/>
+                    <field name="phone_number"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+    <menuitem id="root_menu_college" name="College Management"
+    web_icon="college_management,static/description/college_icon.png"/>
+    <menuitem id="sub_menu_college" name="Student" parent="root_menu_college"/>
+    <menuitem id="menu_student" name="Student Data" parent="sub_menu_college" action="action_college_student"/>
+</odoo>

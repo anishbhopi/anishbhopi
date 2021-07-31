@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_college_staff" model="ir.actions.act_window">
+            <field name="name">Staff</field>
+            <field name="res_model">college.staff</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Add a new staff
+              </p><p>
+                Add the new staff data
+              </p>
+            </field>
+        </record>
+
+    <record id="college_staff_tree" model="ir.ui.view">
+            <field name="name">Staff</field>
+            <field name="model">college.staff</field>
+            <field name="arch" type="xml">
+                <tree string="Staff List">
+                    <field name="employee_id"/>
+                    <field name="first_name"/>
+                    <field name="last_name"/>
+                    <field name="department"/>
+                    <field name="phone_number"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+    <menuitem id="root_menu_college" name="College Management"
+    web_icon="college_management,static/description/college_icon.png"/>
+    <menuitem id="sub_menu_college1" name="Staff" parent="root_menu_college"/>
+    <menuitem id="menu_college" name="Staff Data" parent="sub_menu_college1" action="action_college_staff"/>
+</odoo>
